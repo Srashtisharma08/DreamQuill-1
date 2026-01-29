@@ -4,7 +4,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import { db } from "@/lib/db"
 import { generateStory } from "@/lib/ai"
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic'; 
 
 export async function POST(req: Request) {
     try {
