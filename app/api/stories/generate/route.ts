@@ -12,7 +12,7 @@ export async function POST(req: Request) {
         const { prompt, genre, tone } = await req.json()
 
         if (!prompt) {
-            return NextResponse.json({ message: "Prompt is required" }, { status: 400 })
+            return NextResponse.json({ message: "Prompt is required" }, { status: 400 }) 
         }
 
         // Generate story using AI (or mock)
