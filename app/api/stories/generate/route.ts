@@ -31,7 +31,7 @@ export async function POST(req: Request) {
                         tone: tone || "Neutral",
                         userId: user.id
                     }
-                })
+                }) 
             }
         }
 
