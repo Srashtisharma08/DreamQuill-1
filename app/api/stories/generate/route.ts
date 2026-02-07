@@ -5,7 +5,7 @@ import { db } from "@/lib/db"
 import { generateStory } from "@/lib/ai"
 
 export const dynamic = 'force-dynamic'; 
-
+  
 export async function POST(req: Request) {
     try {
         const session = await getServerSession(authOptions)
