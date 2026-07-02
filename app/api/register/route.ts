@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { hash } from "bcryptjs"
 import { db } from "@/lib/db"
-import * as z from "zod"
+import * as z from "zod" 
 
 export const dynamic = 'force-dynamic';
 
