@@ -5,17 +5,15 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ p
   const { prompt } = await searchParams;
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-100px)] space-y-12 py-10">
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-120px)] space-y-10 py-8 max-w-4xl mx-auto">
       {/* Hero Section */}
-      <div className="text-center space-y-4 max-w-3xl animate-in fade-in slide-in-from-bottom-10 duration-1000">
-        <h1 className="text-6xl md:text-8xl font-black tracking-tight">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-indigo-200 drop-shadow-2xl">
-            DreamQuill
-          </span>
+      <div className="text-center space-y-4 max-w-3xl animate-in fade-in duration-500">
+        <h1 className="text-5xl md:text-6xl font-serif font-bold text-stone-900 tracking-tight">
+          Craft Stories That <span className="italic text-amber-800 font-normal">Connect & Stay</span> With You
         </h1>
-        <p className="text-xl md:text-2xl text-white/90 font-light drop-shadow-md">
-          Weave magical stories with the power of Artificial Intelligence.
-          <br className="hidden md:block" /> Simply describe your dream, and watch it come to life.
+        <p className="text-lg md:text-xl text-stone-600 font-serif leading-relaxed">
+          Bring your characters, settings, and ideas to life.
+          <br className="hidden md:block" /> Describe a premise, and read a story filled with heart and emotion.
         </p>
       </div>
 
@@ -23,9 +21,9 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ p
         <StoryGenerator initialPrompt={prompt || ""} />
       </Suspense>
 
-      {/* Footer / Info */}
-      <div className="pt-20 text-center text-sm text-muted-foreground/50">
-        <p>Running on Gemini AI • Powered by Vercel SDK</p>
+      {/* Footer */}
+      <div className="pt-12 text-center text-xs text-stone-400 font-serif">
+        <p>DreamQuill Studio • Bingeable & Comforting Storytelling</p>
       </div>
     </div>
   );

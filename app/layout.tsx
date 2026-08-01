@@ -7,8 +7,8 @@ import { Navbar } from "@/components/ui/navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "DreamQuill - AI Storyteller",
-  description: "Generate magical stories with AI",
+  title: "DreamQuill - Story Studio",
+  description: "Craft bingeable, emotional stories and novels.",
 };
 
 export default function RootLayout({
@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
         <Providers>
           <Navbar />
           <main className="container mx-auto px-4 pb-16">

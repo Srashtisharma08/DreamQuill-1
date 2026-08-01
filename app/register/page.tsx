@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardHeader, CardContent, CardTitle, CardFooter } from "@/components/ui/card"
+import { Feather } from "lucide-react"
 import Link from "next/link"
 
 export default function RegisterPage() {
@@ -30,26 +31,29 @@ export default function RegisterPage() {
                 router.push("/login")
             } else {
                 const data = await res.json()
-                setError(data.message || "Registration failed")
+                setError(data.message || "Registration failed. Please try again.")
             }
         } catch (error) {
-            setError("Something went wrong")
+            setError("Something went wrong. Please try again.")
         } finally {
             setLoading(false)
         }
     }
 
     return (
-        <div className="flex items-center justify-center min-h-[80vh]">
-            <Card className="w-full max-w-md backdrop-blur-3xl bg-black/40 border-white/10">
-                <CardHeader className="text-center">
-                    <CardTitle className="text-2xl">Join DreamQuill</CardTitle>
-                    <p className="text-sm text-muted-foreground">Start creating magical stories today</p>
+        <div className="flex items-center justify-center min-h-[75vh]">
+            <Card className="w-full max-w-md bg-white border-stone-200/90 shadow-md rounded-3xl p-2">
+                <CardHeader className="text-center pb-2">
+                    <div className="h-12 w-12 rounded-2xl bg-amber-100/70 flex items-center justify-center mx-auto mb-3 border border-amber-200/70">
+                        <Feather className="h-5 w-5 text-amber-800" />
+                    </div>
+                    <CardTitle className="text-3xl font-serif font-bold text-stone-900">Join DreamQuill</CardTitle>
+                    <p className="text-sm text-stone-500 font-serif">Start crafting your bingeable stories today</p>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pt-4">
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div className="space-y-2">
-                            <label className="text-sm font-medium">Email</label>
+                            <label className="text-sm font-semibold text-stone-700 font-serif">Email</label>
                             <Input
                                 type="email"
                                 value={email}
@@ -59,7 +63,7 @@ export default function RegisterPage() {
                             />
                         </div>
                         <div className="space-y-2">
-                            <label className="text-sm font-medium">Password</label>
+                            <label className="text-sm font-semibold text-stone-700 font-serif">Password</label>
                             <Input
                                 type="password"
                                 value={password}
@@ -69,16 +73,17 @@ export default function RegisterPage() {
                                 minLength={8}
                             />
                         </div>
-                        {error && <p className="text-sm text-destructive text-center">{error}</p>}
+                        {error && <p className="text-sm text-rose-600 text-center font-serif">{error}</p>}
 
-                        <Button className="w-full" type="submit" disabled={loading}>
-                            {loading ? "Creating Account..." : "Sign Up"}
+                        <Button className="w-full bg-stone-900 hover:bg-stone-800 text-stone-50 font-medium rounded-xl h-11 font-serif" type="submit" disabled={loading}>
+                            {loading ? "Creating Account..." : "Create Account"}
                         </Button>
                     </form>
                 </CardContent>
-                <CardFooter className="justify-center">
-                    <p className="text-sm text-muted-foreground">
-                        Already have an account? <Link href="/login" className="text-primary hover:underline">Sign in</Link>
+                <CardFooter className="justify-center pt-2">
+                    <p className="text-sm text-stone-500 font-serif">
+                        Already have an account?{" "}
+                        <Link href="/login" className="text-amber-800 font-semibold hover:underline">Sign in</Link>
                     </p>
                 </CardFooter>
             </Card>

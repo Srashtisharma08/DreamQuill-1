@@ -2,51 +2,27 @@
 
 @plugin "tailwindcss-animate";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 :root {
-  --background: hsl(260 25% 95%);
-  --foreground: hsl(260 25% 10%);
+  --background: hsl(40 20% 97%);
+  --foreground: hsl(20 14.3% 10%);
   --card: hsl(0 0% 100%);
-  --card-foreground: hsl(260 25% 10%);
+  --card-foreground: hsl(20 14.3% 10%);
   --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(260 25% 10%);
-  --primary: hsl(265 80% 60%);
-  --primary-foreground: hsl(210 40% 98%);
-  --secondary: hsl(260 20% 90%);
-  --secondary-foreground: hsl(222.2 47.4% 11.2%);
-  --muted: hsl(210 40% 96.1%);
-  --muted-foreground: hsl(215.4 16.3% 46.9%);
-  --accent: hsl(260 60% 92%);
-  --accent-foreground: hsl(222.2 47.4% 11.2%);
-  --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: hsl(210 40% 98%);
-  --border: hsl(214.3 31.8% 91.4%);
-  --input: hsl(214.3 31.8% 91.4%);
-  --ring: hsl(265 80% 60%);
-  --radius: 0.75rem;
-}
-
-.dark {
-  --background: hsl(260 40% 8%);
-  --foreground: hsl(210 40% 98%);
-  --card: hsl(260 40% 10%);
-  --card-foreground: hsl(210 40% 98%);
-  --popover: hsl(222.2 84% 4.9%);
-  --popover-foreground: hsl(210 40% 98%);
-  --primary: hsl(265 80% 60%);
-  --primary-foreground: hsl(210 40% 98%);
-  --secondary: hsl(217.2 32.6% 17.5%);
-  --secondary-foreground: hsl(210 40% 98%);
-  --muted: hsl(217.2 32.6% 17.5%);
-  --muted-foreground: hsl(215 20.2% 65.1%);
-  --accent: hsl(260 40% 15%);
-  --accent-foreground: hsl(210 40% 98%);
-  --destructive: hsl(0 62.8% 30.6%);
-  --destructive-foreground: hsl(210 40% 98%);
-  --border: hsl(217.2 32.6% 17.5%);
-  --input: hsl(217.2 32.6% 17.5%);
-  --ring: hsl(224.3 76.3% 48%);
+  --popover-foreground: hsl(20 14.3% 10%);
+  --primary: hsl(18 80% 44%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(35 25% 94%);
+  --secondary-foreground: hsl(24 10% 20%);
+  --muted: hsl(35 20% 93%);
+  --muted-foreground: hsl(25 8% 46%);
+  --accent: hsl(30 40% 94%);
+  --accent-foreground: hsl(18 80% 38%);
+  --destructive: hsl(0 72% 51%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(30 15% 88%);
+  --input: hsl(30 15% 88%);
+  --ring: hsl(18 80% 44%);
+  --radius: 0.85rem;
 }
 
 @theme {
@@ -74,31 +50,15 @@
 
 @layer utilities {
   .glass-panel {
-    @apply bg-background/60 backdrop-blur-xl border border-white/10 shadow-lg;
+    @apply bg-white/90 backdrop-blur-md border border-stone-200 shadow-sm shadow-stone-200/50;
   }
 }
 
 body {
-  @apply bg-background text-foreground transition-colors duration-300;
+  @apply bg-background text-foreground transition-colors duration-300 min-h-screen;
   background-image:
-    radial-gradient(at 0% 0%, hsla(250, 60%, 20%, 1) 0, transparent 50%),
-    radial-gradient(at 50% 0%, hsla(280, 80%, 30%, 1) 0, transparent 50%),
-    radial-gradient(at 100% 0%, hsla(320, 70%, 25%, 1) 0, transparent 50%),
-    linear-gradient(to bottom right, #1a103c, #2d1b4e);
+    radial-gradient(at 10% 10%, rgba(217, 119, 6, 0.05) 0px, transparent 40%),
+    radial-gradient(at 90% 0%, rgba(194, 65, 12, 0.04) 0px, transparent 40%),
+    linear-gradient(to bottom, #faf9f6, #f4f1ea);
   background-attachment: fixed;
-}
-
-.dark body {
-  background-image:
-    radial-gradient(at 0% 0%, hsla(260, 100%, 15%, 1) 0, transparent 50%),
-    radial-gradient(at 50% 10%, hsla(280, 100%, 20%, 1) 0, transparent 50%),
-    radial-gradient(at 100% 0%, hsla(300, 100%, 15%, 1) 0, transparent 50%),
-    linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-}
-
-.light body {
-  background-image:
-    radial-gradient(at 0% 0%, hsla(260, 80%, 90%, 1) 0, transparent 50%),
-    radial-gradient(at 100% 0%, hsla(300, 80%, 90%, 1) 0, transparent 50%),
-    linear-gradient(to bottom right, #fdfbfb, #ebedee);
 }
